@@ -9,13 +9,6 @@ So I figured, why don’t I create a NetKeen style engine using JavaScript. With
 
 After an evenings work this video shows my I’ve managed to put together so far, not bad! Although I must heavily credit John Graham who created the basic canvas drawing and sprite animation code.
 
-# Videos
-## Scrolling viewport
-[![Scrolling viewport](https://img.youtube.com/vi/cyYu9w35vvw/0.jpg)](https://www.youtube.com/watch?v=cyYu9w35vvw)
-
-## Particle effects
-[![Scrolling viewport](https://img.youtube.com/vi/P51rFMUP3aM/0.jpg)](https://www.youtube.com/watch?v=P51rFMUP3aM)
-
 # Features (current)
 - jQuery keyboard bindings to move your sprite
 - Custom spritesheets for characters
@@ -26,3 +19,10 @@ After an evenings work this video shows my I’ve managed to put together so far
 # Features (planned)
 - Network play
 - Destructable terrian
+
+# Videos
+## Scrolling viewport
+[![Scrolling viewport](https://img.youtube.com/vi/cyYu9w35vvw/0.jpg)](https://www.youtube.com/watch?v=cyYu9w35vvw)
+
+## Particle effects
+[![Scrolling viewport](https://img.youtube.com/vi/P51rFMUP3aM/0.jpg)](https://www.youtube.com/watch?v=P51rFMUP3aM)
