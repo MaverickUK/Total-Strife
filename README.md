@@ -1,7 +1,7 @@
 # Codename: “Total Strife”
 Here’s a sneak peek of my Christmas 2011 project, it’s a 2D sprite engine built in JavaScript using all the HTML5 goodness I can pack in.
 
-It all started when I saw NetKeen in action and first thought the developer had created it from scratch. Looking deeper I found that it was actually a reverse enginnering job - which explained why the gameplay seemed so faithful to the original.
+It all started when I saw [NetKeen](https://keenwiki.shikadi.net/wiki/NetKeen) in action and first thought the developer had created it from scratch. Looking deeper I found that it was actually a reverse enginnering job - which explained why the gameplay seemed so faithful to the original.
 
 I also found out that setting up NetKeen sounded like a bit of a pain, involving DosBox and hoop jumping needed to get the network support to play ball. Also it’s hampered by memory restrictions, resulting in small levels.
 
