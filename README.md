@@ -1,3 +1,23 @@
+# Total Strife
+This a JavaScript/canvas based 2D game engine I wrote over during the Christmas 2011 holiday, but then ran out of time to keep developing. I rediscovered the sourcecode for this on Dropbox in early 2023 and thought I'd upload it here.
+
+![YouTube video](https://img.youtube.com/vi/qZ6bKNAqpzU/0.jpg)
+
+[Watch overview of game engine and code on YouTube](https://youtu.be/qZ6bKNAqpzU)
+
+## Running the game
+Due to the way the game engine loads local files, you'll need to ensure it's running through a web server to prevent getting security errors in the browser. I'd recommend using [http-server](https://www.npmjs.com/package/http-server) and you'll be up and running in a few minutes.
+
+Just fire up the web server then open the `TotalStrife.html` in the browser and everything should work
+
+## Controls
+- **Movement**: Cursor keys
+- **Jump**: Space
+- **Fire**: Control
+
+---
+The following was written back in 2011
+
 # Codename: “Total Strife”
 Here’s a sneak peek of my Christmas 2011 project, it’s a 2D sprite engine built in JavaScript using all the HTML5 goodness I can pack in.
 
