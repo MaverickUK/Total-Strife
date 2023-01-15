@@ -1,0 +1,149 @@
+<!--
+Total Strife: Created 18th December 2011 by Peter Bridger 
+Based upon code written by John Graham, http://www.johnegraham2.com 
+-->
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/> <!-- Required for IE9 -->
+<title>Total Strife: prototype</title>
+</head>
+<body>
+<canvas id="main" style="background-color:orange;">
+<h1>Unfortunately, your browser does not support the canvas tag.</h1>
+</canvas>
+
+<canvas id="chase_cam" width="640" height="480" style="border:1px solid black;"></canvas>
+
+<div style="position:absolute;right:0px;top:0px;">
+    
+    
+
+    <ul>
+        <li>Particles: <span id="lblParticles"></span></li>
+        <li>Projectiles: <span id="lblProjectiles"></span></li>
+    </ul>
+</div>
+
+<input type="text" id="txtOutput" style="width:500px;" />
+
+<input type="button" onclick="buzz.all().mute()" value="Quiet please" />
+<input type="button" onclick="Engine.enabled = !Engine.enabled" value="Pause engine" />
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/buzz.js"></script>
+
+<!-- Total Strife engine files -->
+<script type="text/javascript" src="scripts/engine/utility.js"></script>
+<script type="text/javascript" src="scripts/engine/assets.js"></script>
+<script type="text/javascript" src="scripts/engine/sprite.js"></script>
+<script type="text/javascript" src="scripts/engine/foreground.js"></script>
+<script type="text/javascript" src="scripts/engine/lighting.js"></script>
+<script type="text/javascript" src="scripts/engine/particle.js"></script>
+<script type="text/javascript" src="scripts/engine/datamap.js"></script>
+<script type="text/javascript" src="scripts/engine/projectile.js"></script>
+<script type="text/javascript" src="scripts/engine/engine.js"></script>
+
+
+<script type="text/javascript">
+
+    var sfx = new Array();
+
+    $(document).ready(function () {
+
+        // Start-up engine
+        Engine.init();
+
+        $(document).keydown(function (event) {
+            keyChange(event, true);
+        });
+
+        $(document).keyup(function (event) {
+            keyChange(event, false);
+        });
+
+        /*
+        // Music
+        var backgroundMusic = new buzz.sound("Music/MeleeIsland.mp3");
+        backgroundMusic.play();
+
+        // Sound effects
+        sfx["fire"] = new buzz.sound("sfx/keenfiresnd.wav");
+        */
+
+        // Player charactrer
+        Engine.addSprite(440, 260, 'Keen');
+
+        // Computer controlled
+        Engine.addSprite(540, 260, 'Guybrush');
+        Engine.addSprite(640, 260, 'Duke3D');
+        Engine.addSprite(300, 260, 'DoomMarine');
+        Engine.addSprite(200, 260, 'Biomenace');
+        Engine.addSprite(200, 260, 'Biomenace');
+        Engine.addSprite(200, 260, 'Biomenace');
+
+        // Blow up Duke now and again
+        setInterval(function () { Engine.sprites[2].kill(); }, 5000);
+
+        if (true) {
+            setInterval(function () {
+
+                // Pick a sprite
+                var id = Math.floor(Math.random() * 6) + 1;
+
+                // Pick an action
+                switch (Math.floor(Math.random() * 3)) {
+                    case 0:
+                        Engine.sprites[id].goLeft(true);
+                        Engine.sprites[id].goRight(false);
+                        break;
+                    case 1:
+                        Engine.sprites[id].goLeft(false);
+                        Engine.sprites[id].goRight(true);
+                        break;
+                    case 2:
+                        Engine.sprites[id].goJump();
+                        break;
+                    case 3:
+                        Engine.sprites[id].goFire();
+                        break;
+                }
+
+            }, 600);
+        }
+    });
+
+    function keyChange(keyEvent, flag) {
+        // console.log(keyEvent.keyCode + ' ' + flag);
+
+        var commandKey = true;
+
+        switch (keyEvent.keyCode) {
+            case 37: // Left
+                Engine.sprites[0].goLeft(flag);
+                break;
+            case 39: // Right
+                Engine.sprites[0].goRight(flag);
+                break;
+            case 32: // Jump
+                Engine.sprites[0].goJump();
+                break;
+            case 17: // Control
+                Engine.sprites[0].goFire();
+                break;
+            default:
+                commandKey = false;
+                break;
+        }
+
+
+        if ( commandKey ){
+            keyEvent.preventDefault();
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
